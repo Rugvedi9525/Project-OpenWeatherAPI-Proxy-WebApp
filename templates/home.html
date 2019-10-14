@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Enter the name of the CITY.</h1>
+    <form action="/search_post" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.cityname.label }}<br>
+            {{ form.cityname(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}	
+        {% endwith %}
+{% endblock %}
