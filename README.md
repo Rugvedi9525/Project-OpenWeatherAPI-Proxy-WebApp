@@ -9,12 +9,12 @@ Step 1: Enable docker daemon on your host
  
 Step 2: Build docker container
 
-*docker build -t <name> .
+*docker build -t NAME .
 Example: docker build -t app .
 
 Step 3: Run the docker container
 
-*docker run -it -d -p 8080:8080 --name=<name> <name>
+*docker run -it -d -p 8080:8080 --name=NAME NAME
 Example: docker run -it -d -p 8080:8080 --name=app app
 
 Step 4: Access the website
@@ -25,17 +25,17 @@ Step 4: Access the website
 
 Step 1: Stop the container
 
-*docker stop <name>
+*docker stop NAME
 Example: docker stop app
 
 Step 2: Delete the docker container
 
-*docker rm <name>
+*docker rm NAME
 Example: docker rm app
 
 Step 3: Delete the docker image
 
-*docker rmi <name>
+*docker rmi NAME
 Example: docker rmi app
 
 ****Debug commands
