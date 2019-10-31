@@ -40,18 +40,6 @@ jobs:
             docker push $IMAGE_NAME:$IMAGE_TAG
 workflows:
       version: 2.1
-      build-master:
-        jobs:
-          - build:
-              filters:
-                branches:
-                  only: master
-          - publish-tag:
-              requires:
-                - build
-              filters:
-                branches:
-                  only: master
       build-tags:
         jobs:
           - build:
