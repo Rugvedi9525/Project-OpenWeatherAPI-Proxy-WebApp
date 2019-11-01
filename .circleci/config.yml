@@ -32,7 +32,7 @@ jobs:
           name: Load archived Docker
           command: docker load -i /tmp/workspace/image.tar
       - run:
-          name: Publish Docker Image to Docker Hub
+          name: Publish Docker Image to Docker Hub and add git commit hash as a tag
           command: |
             docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS" docker.io
             docker tag $IMAGE_NAME $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1
