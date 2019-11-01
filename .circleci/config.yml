@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
     jobs:
       build:
         environment:
@@ -24,7 +24,7 @@ version: 2
                 echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
                 docker push $IMAGE_NAME:latest
     workflows:
-      version: 2
+      version: 2.1
       build-master:
         jobs:
           - build:
