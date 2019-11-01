@@ -1,10 +1,14 @@
 version: 2.1
-jobs:
-  build:
+
+executors:
+  docker-publisher:
     environment:
       IMAGE_NAME: app
     docker:
       - image: circleci/buildpack-deps:stretch
+jobs:
+  build:
+    executor: docker-publisher
     steps:
       - checkout
       - setup_remote_docker
@@ -12,10 +16,7 @@ jobs:
           name: Build Docker image
           command: docker build -t app .
   publish-latest:
-    environment:
-      IMAGE_NAME: app
-    docker:
-      - image: circleci/buildpack-deps:stretch
+    executor: docker-publisher
     steps:
       - setup_remote_docker
       - run:
