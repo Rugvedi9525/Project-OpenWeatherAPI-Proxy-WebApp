@@ -36,7 +36,7 @@ jobs:
           command: |
             docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS" docker.io
             docker tag $IMAGE_NAME $DOCKERHUB_USERNAME/$IMAGE_NAME
-            docker push $DOCKERHUB_USERNAME/$IMAGE_NAME
+            docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1
 
 
 workflows:
