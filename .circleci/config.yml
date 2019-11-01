@@ -37,11 +37,9 @@ workflows:
   build-master:
     jobs:
       - build:
-              filters:
-                tags:
-                  only: /^v.*/
-                branches:
-                  ignore: /.*/
+          filters:
+            branches:
+              only: master
       - publish-latest:
           requires:
             - build
