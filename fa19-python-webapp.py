@@ -20,7 +20,7 @@ def index():
 def proxy():
 	form = LoginForm()
 	api = 'http://api.openweathermap.org/data/2.5/weather?q='
-	api_key = '&APPID=8b15ca9741b02804de6caa9d3eee2692'
+	api_key = '*************************'
 	data = (requests.get('{}{}{}'.format(api,form.cityname.data,api_key))).json()
 	return data
 
