@@ -1,5 +1,7 @@
 # fa19-python-webapp
 
+*****Add your openweatherapi api key in the fa19-python-webapp.py file Replace api_key = "Your api key"
+******Add your own SECRET Key
 ***Steps to Start the Python Application
 
 Step 1: Enable docker daemon on your host
